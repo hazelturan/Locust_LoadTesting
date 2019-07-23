@@ -24,10 +24,10 @@ class MyLocust(Locust):
     max_wait = 2000
 
     def setup(self):
-        print("setup kod bloğundayım")
+        print("setup kod blogundayım")
 
     def teardown(self):
-        print("teardown kod bloğundayım")
+        print("teardown kod blogundayım")
 
 # 1. Locust setup
 # 2. TaskSet setup
