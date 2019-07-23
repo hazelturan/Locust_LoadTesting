@@ -1,18 +1,18 @@
 from locust import HttpLocust, TaskSet
 
 
-def index(l):
+def get_homepage(l):
     response = l.client.get("/")
     print(response.status_code)
     print(response.content)
 
 
-def profile(l):
+def get_woman_tab(l):
     l.client.get("/butik/liste/kadin")
 
 
 class UserBehavior(TaskSet):
-    tasks = {index: 2, profile: 1}
+    tasks = {get_homepage: 2, get_woman_tab: 1}
 
 
 class WebsiteUser(HttpLocust):
