@@ -3,12 +3,14 @@ from locust import Locust, TaskSet, task
 
 class MyTaskSet(TaskSet):
     @task(2)
-    def my_task(self):
-        self.client.get("/")
+    def get_homepage(l):
+        response = l.client.get("/")
+        print(response.status_code)
+        print(response.content)
 
     @task(1)
-    def my_other_task(self):
-        self.client.get("/butik/liste/kadin")
+    def get_woman_tab(l):
+        l.client.get("/butik/liste/kadin")
 
 
 class MyLocust(Locust):
